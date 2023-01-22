@@ -1,5 +1,5 @@
 {% set name = "jupyterlab-lego-boost" %}
-{% set version = "0.1.0a1" %}
+{% set version = "0.1.0a2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/jupyterlab_lego_boost-{{ version }}.tar.gz
-  sha256: bc9ae67d3bf2ac94178f7d9ce8dbc0fd6fb2a9a5a89ca34cdbd9765cf230463a
+  sha256: b4638ba390a650be6aa217b4f9c718ab304469eaf0900cea0de0991c6451b31d
 
 build:
   noarch: python
@@ -17,8 +17,11 @@ build:
 requirements:
   host:
     - python >=3.7
-    - jupyter_packaging
     - pip
+    - hatchling >=1.4
+    - hatch-nodejs-version
+    - hatch-jupyter-builder >=0.5
+    - jupyterlab =3.4
   run:
     - python >=3.7
     - jupyterlab-blockly >=0.2.1,<0.3
