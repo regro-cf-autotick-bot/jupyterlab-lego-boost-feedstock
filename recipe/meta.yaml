@@ -18,13 +18,13 @@ requirements:
   host:
     - python >=3.7
     - pip
-    - hatchling >=1.4
+    - hatchling 
     - hatch-nodejs-version
-    - hatch-jupyter-builder >=0.5
-    - jupyterlab =3.4
+    - hatch-jupyter-builder
+    - jupyterlab
   run:
     - python >=3.7
-    - jupyterlab-blockly >=0.2.1,<0.3
+    - jupyterlab-blockly >=0.3.2,<0.4
 
 test:
   imports:
