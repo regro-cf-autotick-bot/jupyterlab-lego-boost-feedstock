@@ -1,5 +1,5 @@
 {% set name = "jupyterlab-lego-boost" %}
-{% set version = "0.1.0a2" %}
+{% set version = "0.1.0a4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/jupyterlab_lego_boost-{{ version }}.tar.gz
-  sha256: b4638ba390a650be6aa217b4f9c718ab304469eaf0900cea0de0991c6451b31d
+  sha256: bd334f3398987a434d889142e2c8f6fa67d123154de4c1449c466e42a848e473
 
 build:
   noarch: python
