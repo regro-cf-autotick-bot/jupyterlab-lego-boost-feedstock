@@ -6,24 +6,24 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/jupyterlab_lego_boost-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/jupyterlab_lego_boost-{{ version }}.tar.gz
   sha256: bd334f3398987a434d889142e2c8f6fa67d123154de4c1449c466e42a848e473
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
     - hatchling >=1.4
     - hatch-nodejs-version
     - hatch-jupyter-builder >=0.5
     - jupyterlab =3.4
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - jupyterlab-blockly >=0.3.3,<0.4
     # - bleak >=0.22.2,<1 - installing it via post-link.sh as it's not available on conda yet
     - pylgbst >=1.3.0,<2
@@ -35,6 +35,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/QuantStack/jupyterlab-lego-boost
